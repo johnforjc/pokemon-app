@@ -2,7 +2,7 @@ import React from "react";
 import "./ChartBar.css";
 
 const ChartBar = (prop) => {
-  const witdhChart = (prop.data / 255) * 100;
+  const witdhChart = (prop.baseStat.data / 255) * 100;
   let colorBar = "";
 
   if (witdhChart <= 33) colorBar = "#ff2b2b";
@@ -11,7 +11,7 @@ const ChartBar = (prop) => {
 
   return (
     <div className="chart-bar">
-      <div className="chart-bar-row title">{prop.header}</div>
+      <div className="chart-bar-row title">{prop.baseStat.header}</div>
       <div className="chart-bar-row content">
         <div className="line" style={{ width: `${witdhChart}%`, background: colorBar }}></div>
       </div>

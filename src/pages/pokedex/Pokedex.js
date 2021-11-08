@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "./pokedex.css";
 
-const Pokedex = () => {
+const Pokedex = ({ setUrlDetail }) => {
   const [urlList, setUrlList] = useState("https://pokeapi.co/api/v2/pokemon?limit=20");
   const [urlNext, seturlNext] = useState();
   const [urlPrev, seturlPrev] = useState();
@@ -39,13 +41,20 @@ const Pokedex = () => {
     }
   }
 
+  // function clickHandler(event) {
+  //   console.log(event.target.dataset.name);
+  //   setUrlDetail(event.target.dataset.name);
+  // }
+
   return (
     <div className="pokedex-content">
       {pokemonList.map((item) => (
-        <div>
-          <p>{capitalizeFirstLetter(item.name)}</p>
-          <img src={urlImage(item.url)} />
-        </div>
+        <Link to={`/detail/${item.name}`} key={item.name}>
+          <div className="pokemon-card">
+            <p>{capitalizeFirstLetter(item.name)}</p>
+            <img src={urlImage(item.url)} />
+          </div>
+        </Link>
       ))}
       <div className="btn" onClick={changeURL} data-url={urlPrev}>
         {"<"}
