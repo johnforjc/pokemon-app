@@ -1,0 +1,25 @@
+.table {
+  width: 100%;
+}
+
+.table-column {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.table-row {
+  padding: 0.5em;
+}
+
+.table-row.title {
+  font-weight: bold;
+  width: max(30%, 100px);
+  text-align: left;
+}
+
+.table-row.content {
+  width: max(70%, 100px);
+  text-align: left;
+}

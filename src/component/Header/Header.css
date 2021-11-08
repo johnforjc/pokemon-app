@@ -1,0 +1,17 @@
+@font-face {
+  font-family: Pokemon;
+  src: url("./../../assets/font/Pokemon\ Solid.ttf");
+}
+
+header {
+  background-color: orange;
+  padding: 0 10vw;
+}
+
+.appName {
+  font-family: Pokemon;
+  width: fit-content;
+  font-size: 24px;
+  -webkit-text-stroke: 1px lightblue;
+  color: yellow;
+}

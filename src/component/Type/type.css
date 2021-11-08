@@ -1,0 +1,11 @@
+.type-label {
+  padding: 0.25em 0.5em;
+  border-radius: 1em;
+  width: fit-content;
+  font-weight: 500;
+  color: #fff;
+}
+
+.type-label.normal {
+  background: #a8a77a;
+}
