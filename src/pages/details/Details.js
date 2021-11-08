@@ -31,6 +31,8 @@ const Details = () => {
         <div className="tab-content">Ability</div>
       </div> */}
 
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" />
+
       <Type type="normal" />
 
       <Table data={data} />
