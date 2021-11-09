@@ -11,6 +11,13 @@ const Details = () => {
   const [dataPokemon, setDataPokemon] = useState([]);
   const [baseStat, setBaseStat] = useState([]);
   const [imageUrl, setImageUrl] = useState("");
+  const [dataTypePokemon, setdataTypePokemon] = useState([]);
+
+  const catchHandler = () => {
+    let a = Math.floor(Math.random() * 100);
+    if (a % 2) alert("Succesfully catch");
+    else alert("Pokemon gone");
+  };
 
   function fetchPokemonDataFromAPI() {
     fetch(urlPokemonData)
@@ -50,9 +57,6 @@ const Details = () => {
           }
         }
 
-        console.log(heldItemArr);
-        console.log(abilityArr);
-
         const data = [
           {
             header: "Height",
@@ -73,6 +77,14 @@ const Details = () => {
         ];
 
         setDataPokemon(data);
+
+        // Ekstrak pokemon type
+        let typePokemon = [];
+        for (let i = 0; i < responseJson.types.length; i++) {
+          typePokemon.push(responseJson.types[i].type.name);
+        }
+
+        setdataTypePokemon(typePokemon);
       });
   }
 
@@ -82,36 +94,23 @@ const Details = () => {
 
   return (
     <div className="detail-box">
-      {/* <div className="tab">
-        <div className="tab-content">Base Stat</div>
-        <div className="tab-content">Ability</div>
-      </div> */}
       {pokemon}
       <img src={imageUrl} alt={pokemon} />
-      <Type type="normal" />
+      <div className="btn" onClick={catchHandler}>
+        Catch Now
+      </div>
+
+      <div className="type-box">
+        {dataTypePokemon.map((item, index) => (
+          <Type type={item} key={index} />
+        ))}
+      </div>
+
       <Table data={dataPokemon} />
 
       {baseStat.map((item, index) => (
         <ChartBar key={index} baseStat={item} />
       ))}
-      {/* <div className="table">
-        <div className="table-column">
-          <div className="table-row title">Height</div>
-          <div className="table-row content">0.7m</div>
-        </div>
-        <div className="table-column">
-          <div className="table-row title">Weight</div>
-          <div className="table-row content">6.9kg</div>
-        </div>
-        <div className="table-column">
-          <div className="table-row title">Held Items</div>
-          <div className="table-row content">Not Found</div>
-        </div>
-        <div className="table-column">
-          <div className="table-row title">Ability</div>
-          <div className="table-row content">Overgrow, Chlorophyll, hahhaha</div>
-        </div>
-      </div> */}
     </div>
   );
 };

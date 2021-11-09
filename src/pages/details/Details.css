@@ -23,3 +23,11 @@
   width: max(70%, 100px);
   text-align: left;
 }
+
+.type-box {
+  display: flex;
+}
+
+.type-box * {
+  margin-right: 0.5em;
+}
