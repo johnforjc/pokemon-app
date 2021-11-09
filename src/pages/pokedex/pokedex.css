@@ -1,5 +1,65 @@
+.pokedex-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+.pokemon-box {
+  display: inline-block;
+  width: max(25%, 280px);
+}
+
+.info-inventory {
+  width: 100%;
+}
+
+.info-inventory p {
+  text-align: right;
+  margin-bottom: 5px;
+}
+
 .pokemon-card {
   position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0.5em 0.5em;
+  width: max(25%, 280px);
+  background-color: white;
+  border-radius: 3em;
+}
+
+.pokemon-card .image-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: orange;
+  margin-right: 1em;
+}
+
+.pokemon-card .image-box img {
+  display: block;
+  width: inherit;
+  aspect-ratio: 1/1;
+}
+
+.pokemon-card .pokemon-name {
+  letter-spacing: 0.25px;
+}
+
+.pokemon-card .go {
+  background-color: orange;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: 0.5em;
+  transform: translate(-50%, -50%);
 }
 
 .pokemon-card::after {
@@ -10,4 +70,22 @@
   background: transparent;
   top: 0;
   left: 0;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 280px;
+}
+
+.btn-pagination {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }

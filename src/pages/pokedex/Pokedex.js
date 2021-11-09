@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./pokedex.css";
 
-const Pokedex = ({ setUrlDetail }) => {
+const Pokedex = () => {
   const [urlList, setUrlList] = useState("https://pokeapi.co/api/v2/pokemon?limit=20");
   const [urlNext, seturlNext] = useState();
   const [urlPrev, seturlPrev] = useState();
@@ -41,26 +41,44 @@ const Pokedex = ({ setUrlDetail }) => {
     }
   }
 
-  // function clickHandler(event) {
-  //   console.log(event.target.dataset.name);
-  //   setUrlDetail(event.target.dataset.name);
-  // }
-
   return (
-    <div className="pokedex-content">
-      {pokemonList.map((item) => (
-        <Link to={`/detail/${item.name}`} key={item.name}>
-          <div className="pokemon-card">
-            <p>{capitalizeFirstLetter(item.name)}</p>
-            <img src={urlImage(item.url)} />
-          </div>
+    <div className="pokedex-box">
+      <h2>Pokemon List</h2>
+
+      <div className="info-inventory">
+        <Link to="/pokemon-app/mypokemon">
+          <p>
+            <small>Your pokemon: 20</small>
+          </p>
         </Link>
-      ))}
-      <div className="btn" onClick={changeURL} data-url={urlPrev}>
-        {"<"}
       </div>
-      <div className="btn" onClick={changeURL} data-url={urlNext}>
-        {">"}
+      <div className="pokedex-content">
+        {pokemonList.map((item) => (
+          <Link to={`/pokemon-app/detail/${item.name}`} key={item.name}>
+            <div className="pokemon-box">
+              <div className="pokemon-card">
+                <div className="image-box">
+                  <img src={urlImage(item.url)} />
+                </div>
+                <div className="pokemon-name">
+                  <h3>{capitalizeFirstLetter(item.name)}</h3>
+                </div>
+                <div className="go">
+                  <h4>{">"}</h4>
+                </div>
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      <div className="btn-group">
+        <div className="btn-pagination" onClick={changeURL} data-url={urlPrev}>
+          {"<"}
+        </div>
+        <div className="btn-pagination" onClick={changeURL} data-url={urlNext}>
+          {">"}
+        </div>
       </div>
     </div>
   );

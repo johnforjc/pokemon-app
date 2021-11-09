@@ -15,18 +15,18 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
       <Router>
+        <Header />
         <main>
           <Switch>
-            <Route exact path="/">
+            <Route exact path="/pokemon-app">
               {/* <Pokedex setUrlDetail={setUrl} /> */}
               <Pokedex />
             </Route>
-            <Route path="/detail/:pokemon">
+            <Route path="/pokemon-app/detail/:pokemon">
               <Details />
             </Route>
-            <Route path="/mypokemon">
+            <Route path="/pokemon-app/mypokemon">
               <Mypokedex />
             </Route>
           </Switch>
