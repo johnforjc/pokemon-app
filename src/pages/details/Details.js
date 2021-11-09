@@ -4,26 +4,49 @@ import Table from "./../../component/Table/Table";
 import Type from "../../component/Type/Type";
 import ChartBar from "../../component/chart-bar/ChartBar";
 import { useParams } from "react-router";
+import StorageAccess from "../../data/localStorage";
 
 const Details = () => {
   let { pokemon } = useParams();
   const urlPokemonData = "https://pokeapi.co/api/v2/pokemon/" + pokemon;
+
   const [dataPokemon, setDataPokemon] = useState([]);
   const [baseStat, setBaseStat] = useState([]);
   const [imageUrl, setImageUrl] = useState("");
   const [dataTypePokemon, setdataTypePokemon] = useState([]);
+  const [isCatched, setisCatched] = useState(false);
+  const [nickname, setnickname] = useState("");
 
   const catchHandler = () => {
     let a = Math.floor(Math.random() * 100);
-    if (a % 2) alert("Succesfully catch");
+    if (a % 2) setisCatched(true);
     else alert("Pokemon gone");
+  };
+
+  const changeInputHandler = (event) => {
+    setnickname(event.target.value);
+  };
+
+  const releaseHandler = () => {
+    setisCatched(false);
+  };
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    setisCatched(false);
+
+    let dataInputJson = {
+      nickname: nickname,
+      pokemon: pokemon,
+      urlImage: imageUrl,
+    };
+    StorageAccess.addToLocalStorage(dataInputJson);
   };
 
   function fetchPokemonDataFromAPI() {
     fetch(urlPokemonData)
       .then((response) => response.json())
       .then((responseJson) => {
-        console.log(responseJson);
         setImageUrl(responseJson.sprites.front_default);
 
         // Ekstrak base stat dari response API
@@ -94,6 +117,23 @@ const Details = () => {
 
   return (
     <div className="detail-box">
+      {isCatched && (
+        <div className="form-nickname-input">
+          <h4>Pokemon Catched</h4>
+          <form action="" onSubmit={submitHandler}>
+            <input type="text" name="nickname" id="nickname" placeholder="Give nickname" onChange={changeInputHandler} />
+            <div className="button-group">
+              <div className="btn" onClick={releaseHandler}>
+                Release
+              </div>
+              <button type="submit" id="submit">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      )}
+
       {pokemon}
       <img src={imageUrl} alt={pokemon} />
       <div className="btn" onClick={catchHandler}>
