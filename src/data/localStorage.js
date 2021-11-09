@@ -26,7 +26,7 @@ class StorageAccess {
   static deleteFromLocalStorage = (id) => {
     let myPokemonList = this.fetchLocalStorage();
 
-    let newPokemonList = myPokemonList.filter((data) => data.id !== id);
+    let newPokemonList = myPokemonList.filter((data) => data.nickname !== id);
 
     localStorage.setItem("LOCAL_POKEMON_LIST", JSON.stringify(newPokemonList));
   };
