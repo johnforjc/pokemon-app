@@ -10,8 +10,6 @@ class StorageAccess {
 
   static addToLocalStorage = (data) => {
     let myPokemonList = this.fetchLocalStorage();
-    console.log(data.nickname);
-    console.log(myPokemonList[0].nickname);
 
     for (let i = 0; i < myPokemonList.length; i++) {
       if (myPokemonList[i].nickname == data.nickname) {

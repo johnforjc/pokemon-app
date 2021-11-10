@@ -15,13 +15,15 @@ const Details = () => {
   const [imageUrl, setImageUrl] = useState("");
   const [dataTypePokemon, setdataTypePokemon] = useState([]);
   const [isCatched, setisCatched] = useState(false);
+  const [isGone, setisGone] = useState(false);
   const [nickname, setnickname] = useState("");
   const [isUsedNickname, setisUsedNickname] = useState(false);
+  const [isTooLong, setisTooLong] = useState(false);
 
   const catchHandler = () => {
     let a = Math.floor(Math.random() * 100);
-    if (a % 2) setisCatched(true);
-    else alert("Pokemon gone");
+    if (a % 2 == 0) setisCatched(true);
+    else setisGone(true);
   };
 
   const changeInputHandler = (event) => {
@@ -32,8 +34,21 @@ const Details = () => {
     setisCatched(false);
   };
 
+  const closeAlertTooLong = () => {
+    setisTooLong(false);
+  };
+
+  const closeAlert = () => {
+    setisGone(false);
+  };
+
   const submitHandler = (event) => {
     event.preventDefault();
+
+    if (nickname.length >= 8) {
+      setisTooLong(true);
+      return;
+    }
 
     let dataInputJson = {
       nickname: nickname,
@@ -129,6 +144,24 @@ const Details = () => {
 
   return (
     <div className="detail-box">
+      {isCatched && isTooLong && (
+        <div className="alert">
+          <p>Name must be less than 9 character</p>
+          <div className="btn btn-resubmit" onClick={closeAlertTooLong}>
+            Close
+          </div>
+        </div>
+      )}
+
+      {isGone && (
+        <div className="alert">
+          <p>Pokemon has gone</p>
+          <div className="btn btn-resubmit" onClick={closeAlert}>
+            Close
+          </div>
+        </div>
+      )}
+
       {isCatched && isUsedNickname && (
         <div className="alert alert-used">
           <p>Name has been used.</p>
@@ -138,7 +171,7 @@ const Details = () => {
         </div>
       )}
 
-      {isCatched && !isUsedNickname && (
+      {isCatched && !isUsedNickname && !isTooLong && (
         <div className="alert form-nickname-input">
           <h4>Pokemon Catched</h4>
           <form action="" onSubmit={submitHandler}>

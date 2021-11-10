@@ -35,7 +35,7 @@
 }
 
 .detail-content-box .divider {
-  width: 50%;
+  width: min(50%, 320px);
   display: block;
   margin: auto;
   margin-top: -10px;

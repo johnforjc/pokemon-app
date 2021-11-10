@@ -19,34 +19,35 @@ const Mypokedex = () => {
 
   const releaseHandler = (event) => {
     let nickname = event.target.dataset.id;
-    console.log(nickname);
 
     StorageAccess.deleteFromLocalStorage(nickname);
     refreshPokemon();
   };
 
   return (
-    <div className="mypokedex-box">
-      <h2>My Pokemon</h2>
-      <div className="mypokedex-content">
-        {myPokemonList.map((item) => (
-          <div className="mypokedex-card-box" key={item.nickname}>
-            <div className="mypokedex-card">
-              <div className="mypokedex-img">
-                <img src={item.urlImage} />
-              </div>
+    <div className="detail-box">
+      <div className="mypokedex-box">
+        <h2>My Pokemon</h2>
+        <div className="mypokedex-content">
+          {myPokemonList.map((item) => (
+            <div className="mypokedex-card-box" key={item.nickname}>
+              <div className="mypokedex-card">
+                <div className="mypokedex-img">
+                  <img src={item.urlImage} />
+                </div>
 
-              <div className="mypokedex-info">
-                <h3>{capitalizeFirstLetter(item.pokemon)}</h3>
-                <p>{capitalizeFirstLetter(item.nickname)}</p>
-              </div>
+                <div className="mypokedex-info">
+                  <h3>{capitalizeFirstLetter(item.pokemon)}</h3>
+                  <small>{capitalizeFirstLetter(item.nickname)}</small>
+                </div>
 
-              <div className="btn btn-release" onClick={releaseHandler} data-id={item.nickname}>
-                Release
+                <div className="btn btn-release" onClick={releaseHandler} data-id={item.nickname}>
+                  Release
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
