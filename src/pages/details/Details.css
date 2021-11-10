@@ -63,7 +63,7 @@
   margin-right: 0.5em;
 }
 
-.form-nickname-input {
+.alert {
   width: min(80%, 300px);
   position: absolute;
   top: 50%;
@@ -73,6 +73,19 @@
   padding: 20px 20px;
   border-radius: 20px;
   z-index: 100;
+}
+
+.alert .btn-resubmit {
+  width: fit-content;
+  padding: 0.25em 1em;
+  border-radius: 1em;
+  border: none;
+  outline: none;
+  background-color: red;
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  color: #fff;
 }
 
 .form-nickname-input h4 {

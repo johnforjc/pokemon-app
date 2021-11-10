@@ -16,6 +16,7 @@ const Details = () => {
   const [dataTypePokemon, setdataTypePokemon] = useState([]);
   const [isCatched, setisCatched] = useState(false);
   const [nickname, setnickname] = useState("");
+  const [isUsedNickname, setisUsedNickname] = useState(false);
 
   const catchHandler = () => {
     let a = Math.floor(Math.random() * 100);
@@ -33,14 +34,25 @@ const Details = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    setisCatched(false);
 
     let dataInputJson = {
       nickname: nickname,
       pokemon: pokemon,
       urlImage: imageUrl,
     };
-    StorageAccess.addToLocalStorage(dataInputJson);
+
+    let isUsed = StorageAccess.addToLocalStorage(dataInputJson);
+
+    if (isUsed) {
+      setisUsedNickname(true);
+      return;
+    }
+
+    setisCatched(false);
+  };
+
+  const resubmitHandler = () => {
+    setisUsedNickname(false);
   };
 
   function fetchPokemonDataFromAPI() {
@@ -117,8 +129,17 @@ const Details = () => {
 
   return (
     <div className="detail-box">
-      {isCatched && (
-        <div className="form-nickname-input">
+      {isCatched && isUsedNickname && (
+        <div className="alert alert-used">
+          <p>Name has been used.</p>
+          <div className="btn btn-resubmit" onClick={resubmitHandler}>
+            Close
+          </div>
+        </div>
+      )}
+
+      {isCatched && !isUsedNickname && (
+        <div className="alert form-nickname-input">
           <h4>Pokemon Catched</h4>
           <form action="" onSubmit={submitHandler}>
             <input type="text" name="nickname" id="nickname" placeholder="Give nickname" onChange={changeInputHandler} />
