@@ -30,6 +30,12 @@ class StorageAccess {
 
     localStorage.setItem("LOCAL_POKEMON_LIST", JSON.stringify(newPokemonList));
   };
+
+  static getPokemonCount = () => {
+    let myPokemonList = this.fetchLocalStorage();
+
+    return myPokemonList.length;
+  };
 }
 
 export default StorageAccess;

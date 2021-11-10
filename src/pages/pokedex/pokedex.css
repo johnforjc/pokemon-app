@@ -1,17 +1,30 @@
 .pokedex-box {
+  display: block;
+  margin: auto;
+}
+
+.pokedex-box-content {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column;
 }
 
+.pokedex-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
 .pokemon-box {
   display: inline-block;
-  width: max(25%, 280px);
+  width: max(25%, 320px);
+  padding: 0px 20px;
 }
 
 .info-inventory {
   width: 100%;
+  padding: 0px 20px;
 }
 
 .info-inventory p {
@@ -48,18 +61,19 @@
   letter-spacing: 0.25px;
 }
 
-.pokemon-card .go {
+.pokedex-info {
+  width: calc(100% - 100px);
+}
+
+.go {
   background-color: orange;
   width: 30px;
   height: 30px;
   display: flex;
+  border-radius: 50%;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
   right: 0.5em;
-  transform: translate(-50%, -50%);
 }
 
 .pokemon-card::after {

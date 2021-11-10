@@ -8,7 +8,7 @@ const Header = () => {
     <header>
       <Link to="/pokemon-app/">
         <Route exact path={["/pokemon-app/"]}>
-          <h1 className="appName">Pokemon</h1>
+          <h3 className="appName">Pokemon</h3>
         </Route>
         <Route path={["/pokemon-app/detail/:pokemon", "/pokemon-app/mypokemon"]}>
           <div className="backButton">

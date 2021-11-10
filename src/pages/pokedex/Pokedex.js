@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./pokedex.css";
+import StorageAccess from "../../data/localStorage";
 
 const Pokedex = () => {
   const [urlList, setUrlList] = useState("https://pokeapi.co/api/v2/pokemon?limit=20");
   const [urlNext, seturlNext] = useState();
   const [urlPrev, seturlPrev] = useState();
   const [pokemonList, setPokemonList] = useState([]);
+  const [pokemonCount, setpokemonCount] = useState(0);
 
   function fetchAPI() {
     fetch(urlList)
@@ -20,6 +22,7 @@ const Pokedex = () => {
 
   useEffect(() => {
     fetchAPI();
+    setpokemonCount(StorageAccess.getPokemonCount());
     return;
   }, [urlList]);
 
@@ -43,41 +46,64 @@ const Pokedex = () => {
 
   return (
     <div className="pokedex-box">
-      <h2>Pokemon List</h2>
+      <div className="pokedex-box-content">
+        <h2>Pokemon List</h2>
 
-      <div className="info-inventory">
-        <Link to="/pokemon-app/mypokemon">
-          <p>
-            <small>Your pokemon: 20</small>
-          </p>
-        </Link>
-      </div>
-      <div className="pokedex-content">
-        {pokemonList.map((item) => (
-          <Link to={`/pokemon-app/detail/${item.name}`} key={item.name}>
-            <div className="pokemon-box">
-              <div className="pokemon-card">
-                <div className="image-box">
-                  <img src={urlImage(item.url)} />
-                </div>
-                <div className="pokemon-name">
-                  <h3>{capitalizeFirstLetter(item.name)}</h3>
-                </div>
-                <div className="go">
-                  <h4>{">"}</h4>
+        <div className="info-inventory">
+          <Link to="/pokemon-app/mypokemon">
+            <p>
+              <small>Your pokemon: {pokemonCount}</small>
+            </p>
+          </Link>
+        </div>
+
+        {/* <div className="pokedex-content">
+          {pokemonList.map((item) => (
+            <Link to={`/pokemon-app/detail/${item.name}`} key={item.name}>
+              <div className="pokemon-box">
+                <div className="pokemon-card">
+                  <div className="image-box">
+                    <img src={urlImage(item.url)} />
+                  </div>
+                  <div className="pokemon-name">
+                    <h3>{capitalizeFirstLetter(item.name)}</h3>
+                  </div>
+                  <div className="go">
+                    <h4>{">"}</h4>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Link>
-        ))}
-      </div>
+            </Link>
+          ))}
+        </div> */}
 
-      <div className="btn-group">
-        <div className="btn-pagination" onClick={changeURL} data-url={urlPrev}>
-          {"<"}
+        <div className="mypokedex-content">
+          {pokemonList.map((item) => (
+            <div className="mypokedex-card-box" key={item.name}>
+              <Link to={`/pokemon-app/detail/${item.name}`}>
+                <div className="mypokedex-card">
+                  <div className="mypokedex-img">
+                    <img src={urlImage(item.url)} />
+                  </div>
+
+                  <div className="pokedex-info">
+                    <h3>{capitalizeFirstLetter(item.name)}</h3>
+                  </div>
+
+                  <div className="btn go">{">"}</div>
+                </div>
+              </Link>
+            </div>
+          ))}
         </div>
-        <div className="btn-pagination" onClick={changeURL} data-url={urlNext}>
-          {">"}
+
+        <div className="btn-group">
+          <div className="btn btn-pagination" onClick={changeURL} data-url={urlPrev}>
+            {"<"}
+          </div>
+          <div className="btn btn-pagination" onClick={changeURL} data-url={urlNext}>
+            {">"}
+          </div>
         </div>
       </div>
     </div>

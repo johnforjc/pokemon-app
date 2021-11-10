@@ -123,10 +123,10 @@ const Details = () => {
           <form action="" onSubmit={submitHandler}>
             <input type="text" name="nickname" id="nickname" placeholder="Give nickname" onChange={changeInputHandler} />
             <div className="button-group">
-              <div className="btn" onClick={releaseHandler}>
+              <div className="btn btn-release" onClick={releaseHandler}>
                 Release
               </div>
-              <button type="submit" id="submit">
+              <button type="submit" id="submit" className="btn">
                 Submit
               </button>
             </div>
@@ -151,16 +151,18 @@ const Details = () => {
 
       <div className="detail-content-box">
         <div className="divider"></div>
-        <div className="detail-content">
-          <h2>Overview</h2>
-          <Table data={dataPokemon} />
-        </div>
+        <div className="detail-info-box">
+          <div className="detail-content">
+            <h2>Overview</h2>
+            <Table data={dataPokemon} />
+          </div>
 
-        <div className="detail-content">
-          <h2>Base Stat</h2>
-          {baseStat.map((item, index) => (
-            <ChartBar key={index} baseStat={item} />
-          ))}
+          <div className="detail-content">
+            <h2>Base Stat</h2>
+            {baseStat.map((item, index) => (
+              <ChartBar key={index} baseStat={item} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

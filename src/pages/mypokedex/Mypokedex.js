@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import StorageAccess from "../../data/localStorage";
+import "./Mypokedex.css";
 
 const Mypokedex = () => {
   const [myPokemonList, setmyPokemonList] = useState(StorageAccess.fetchLocalStorage());
@@ -25,18 +26,28 @@ const Mypokedex = () => {
   };
 
   return (
-    <div>
-      {myPokemonList.map((item) => (
-        <div className="mypokedex-card" key={item.nickname}>
-          <p>{capitalizeFirstLetter(item.pokemon)}</p>
-          <p>{capitalizeFirstLetter(item.nickname)}</p>
-          <img src={item.urlImage} />
+    <div className="mypokedex-box">
+      <h2>My Pokemon</h2>
+      <div className="mypokedex-content">
+        {myPokemonList.map((item) => (
+          <div className="mypokedex-card-box" key={item.nickname}>
+            <div className="mypokedex-card">
+              <div className="mypokedex-img">
+                <img src={item.urlImage} />
+              </div>
 
-          <div className="btn-release" onClick={releaseHandler} data-id={item.nickname}>
-            Release
+              <div className="mypokedex-info">
+                <h3>{capitalizeFirstLetter(item.pokemon)}</h3>
+                <p>{capitalizeFirstLetter(item.nickname)}</p>
+              </div>
+
+              <div className="btn btn-release" onClick={releaseHandler} data-id={item.nickname}>
+                Release
+              </div>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
