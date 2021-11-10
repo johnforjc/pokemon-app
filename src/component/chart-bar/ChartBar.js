@@ -13,7 +13,7 @@ const ChartBar = (prop) => {
     <div className="chart-bar">
       <div className="chart-bar-row title">{prop.baseStat.header}</div>
       <div className="chart-bar-row content">
-        <div className="line" style={{ width: `${witdhChart}%`, background: colorBar }}></div>
+        <div className="line-bar" style={{ width: `${witdhChart}%`, background: colorBar }}></div>
       </div>
     </div>
   );

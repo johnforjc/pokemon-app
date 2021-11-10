@@ -134,23 +134,35 @@ const Details = () => {
         </div>
       )}
 
-      {pokemon}
-      <img src={imageUrl} alt={pokemon} />
-      <div className="btn" onClick={catchHandler}>
+      <div className="detail-header">
+        <h2 className="pokemon-name">{pokemon}</h2>
+        <div className="type-box">
+          {dataTypePokemon.map((item, index) => (
+            <Type type={item} key={index} />
+          ))}
+        </div>
+      </div>
+      <div className="detail-img">
+        <img src={imageUrl} alt={pokemon} />
+      </div>
+      <div className="btn-catch" onClick={catchHandler}>
         Catch Now
       </div>
 
-      <div className="type-box">
-        {dataTypePokemon.map((item, index) => (
-          <Type type={item} key={index} />
-        ))}
+      <div className="detail-content-box">
+        <div className="divider"></div>
+        <div className="detail-content">
+          <h2>Overview</h2>
+          <Table data={dataPokemon} />
+        </div>
+
+        <div className="detail-content">
+          <h2>Base Stat</h2>
+          {baseStat.map((item, index) => (
+            <ChartBar key={index} baseStat={item} />
+          ))}
+        </div>
       </div>
-
-      <Table data={dataPokemon} />
-
-      {baseStat.map((item, index) => (
-        <ChartBar key={index} baseStat={item} />
-      ))}
     </div>
   );
 };

@@ -1,17 +1,31 @@
-@font-face {
-  font-family: Pokemon;
-  src: url("./../../assets/font/Pokemon\ Solid.ttf");
-}
-
 header {
   background-color: orange;
-  padding: 0 10vw;
+  padding: 0 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 60px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
 }
 
 .appName {
-  font-family: Pokemon;
   width: fit-content;
   font-size: 24px;
-  -webkit-text-stroke: 1px lightblue;
-  color: yellow;
+  color: white;
+}
+
+.backButton {
+  font-family: "Poppins", sans-serif;
+  margin-right: 10px;
+  background: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

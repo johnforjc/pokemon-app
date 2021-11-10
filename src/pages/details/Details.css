@@ -1,27 +1,40 @@
-.table {
+.detail-box {
+  display: block;
   width: 100%;
+  margin: auto;
+  /* background: white; */
 }
 
-.table-column {
+.detail-content-box {
   width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  background: white;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  padding: 20px 10px;
 }
 
-.table-row {
-  padding: 0.5em;
+.detail-content {
+  margin-bottom: 20px;
 }
 
-.table-row.title {
-  font-weight: bold;
-  width: max(30%, 100px);
-  text-align: left;
+.detail-content-box .divider {
+  width: 50%;
+  display: block;
+  margin: auto;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  height: 4px;
+  border-radius: 4px;
+  background: grey;
 }
 
-.table-row.content {
-  width: max(70%, 100px);
-  text-align: left;
+.detail-header {
+  width: 100%;
+  padding: 5px 20px;
+}
+
+.pokemon-name {
+  text-transform: capitalize;
 }
 
 .type-box {
@@ -58,6 +71,30 @@ input#nickname {
   padding: 0.5em 2em;
   background-color: rgb(211, 211, 211);
   margin-bottom: 0.5em;
+}
+
+.btn-catch {
+  padding: 0.25em 1em;
+  border-radius: 1em;
+  border: none;
+  outline: none;
+  background-color: white;
+  display: block;
+  width: fit-content;
+  margin: auto;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.detail-img {
+  display: block;
+  margin: auto;
+  width: 20vh;
+}
+
+.detail-img img {
+  width: 20vh;
+  aspect-ratio: 1/1;
 }
 
 .button-group {
