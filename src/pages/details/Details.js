@@ -107,6 +107,16 @@ const Details = () => {
           }
         }
 
+        let moveArr = [];
+        if (responseJson.moves.length === 0) abilityArr = "No ability found";
+        else {
+          for (let i = 0; i < responseJson.moves.length; i++) {
+            moveArr.push(responseJson.moves[i].move.name.replace(/-/g, " "));
+          }
+        }
+
+        console.log(moveArr);
+
         const data = [
           {
             header: "Height",
