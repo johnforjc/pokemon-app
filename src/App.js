@@ -4,14 +4,14 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Details from "./pages/details/Details";
 import Pokedex from "./pages/pokedex/Pokedex";
 import Mypokedex from "./pages/mypokedex/Mypokedex";
+import React, { useState } from "react";
 
 function App() {
-  // const [urlDetail, seturlDetail] = useState("");
+  const [isLoading, setisLoading] = useState(false);
 
-  // const setUrl = (url) => {
-  //   seturlDetail(url);
-  //   console.log(url);
-  // };
+  const toogleLoadingHandler = () => {
+    setisLoading(!isLoading);
+  };
 
   return (
     <div className="App">
@@ -21,13 +21,13 @@ function App() {
           <Switch>
             <Route exact path="/pokemon-app">
               {/* <Pokedex setUrlDetail={setUrl} /> */}
-              <Pokedex />
+              <Pokedex loading={toogleLoadingHandler} />
             </Route>
             <Route path="/pokemon-app/detail/:pokemon">
-              <Details />
+              <Details loading={toogleLoadingHandler} />
             </Route>
             <Route path="/pokemon-app/mypokemon">
-              <Mypokedex />
+              <Mypokedex loading={toogleLoadingHandler} />
             </Route>
           </Switch>
         </main>

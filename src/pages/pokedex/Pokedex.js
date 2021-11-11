@@ -84,6 +84,7 @@ const Pokedex = () => {
                 className="pokeball"
                 style={{
                   backgroundImage: `url(${process.env.PUBLIC_URL + "/pokeball.png"})`,
+                  opacity: "0.15",
                 }}
               ></div>
 

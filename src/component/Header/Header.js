@@ -30,12 +30,12 @@ const Header = () => {
       </div>
 
       <nav className={!isActive ? "active" : ""}>
-        <div className="nav-list">
-          <Link to="/pokemon-app/">Pokedex</Link>
-        </div>
-        <div className="nav-list">
-          <Link to="/pokemon-app/mypokemon">My Pokemon</Link>
-        </div>
+        <Link to="/pokemon-app/">
+          <div className="nav-list">Pokedex</div>
+        </Link>
+        <Link to="/pokemon-app/">
+          <div className="nav-list">My Pokemon</div>
+        </Link>
       </nav>
     </header>
   );

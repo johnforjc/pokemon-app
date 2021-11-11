@@ -12,7 +12,6 @@
   top: 50px;
   right: 100px;
   background-size: cover;
-  opacity: 0.2;
 }
 
 .detail-pokeball:nth-child(2n + 1) {
@@ -23,7 +22,6 @@
   bottom: 75px;
   left: 150px;
   background-size: cover;
-  opacity: 0.2;
 }
 
 .detail-box h2 {

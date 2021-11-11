@@ -6,7 +6,7 @@ import ChartBar from "../../component/chart-bar/ChartBar";
 import { useParams } from "react-router";
 import StorageAccess from "../../data/localStorage";
 
-const Details = () => {
+const Details = ({ props }) => {
   let { pokemon } = useParams();
   const urlPokemonData = "https://pokeapi.co/api/v2/pokemon/" + pokemon;
 
@@ -220,6 +220,7 @@ const Details = () => {
           className="detail-pokeball"
           style={{
             backgroundImage: `url(${process.env.PUBLIC_URL + "/pokeball.png"})`,
+            opacity: "0.1",
           }}
         ></div>
 
@@ -227,6 +228,7 @@ const Details = () => {
           className="detail-pokeball"
           style={{
             backgroundImage: `url(${process.env.PUBLIC_URL + "/pokeball.png"})`,
+            opacity: "0.2",
           }}
         ></div>
         <div className="divider"></div>
