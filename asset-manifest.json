@@ -1,22 +1,24 @@
 {
   "files": {
-    "main.css": "/pokemon-app/static/css/main.390e1f64.chunk.css",
-    "main.js": "/pokemon-app/static/js/main.0deda9e7.chunk.js",
-    "main.js.map": "/pokemon-app/static/js/main.0deda9e7.chunk.js.map",
+    "main.css": "/pokemon-app/static/css/main.37b6e3d9.chunk.css",
+    "main.js": "/pokemon-app/static/js/main.b8801128.chunk.js",
+    "main.js.map": "/pokemon-app/static/js/main.b8801128.chunk.js.map",
     "runtime-main.js": "/pokemon-app/static/js/runtime-main.3d71db8b.js",
     "runtime-main.js.map": "/pokemon-app/static/js/runtime-main.3d71db8b.js.map",
-    "static/js/2.84b75241.chunk.js": "/pokemon-app/static/js/2.84b75241.chunk.js",
-    "static/js/2.84b75241.chunk.js.map": "/pokemon-app/static/js/2.84b75241.chunk.js.map",
+    "static/js/2.cfa484d3.chunk.js": "/pokemon-app/static/js/2.cfa484d3.chunk.js",
+    "static/js/2.cfa484d3.chunk.js.map": "/pokemon-app/static/js/2.cfa484d3.chunk.js.map",
     "static/js/3.72fb1211.chunk.js": "/pokemon-app/static/js/3.72fb1211.chunk.js",
     "static/js/3.72fb1211.chunk.js.map": "/pokemon-app/static/js/3.72fb1211.chunk.js.map",
     "index.html": "/pokemon-app/index.html",
-    "static/css/main.390e1f64.chunk.css.map": "/pokemon-app/static/css/main.390e1f64.chunk.css.map",
-    "static/js/2.84b75241.chunk.js.LICENSE.txt": "/pokemon-app/static/js/2.84b75241.chunk.js.LICENSE.txt"
+    "static/css/main.37b6e3d9.chunk.css.map": "/pokemon-app/static/css/main.37b6e3d9.chunk.css.map",
+    "static/js/2.cfa484d3.chunk.js.LICENSE.txt": "/pokemon-app/static/js/2.cfa484d3.chunk.js.LICENSE.txt",
+    "static/media/Mypokedex.css": "/pokemon-app/static/media/pokeball.fa947557.png",
+    "static/media/index.css": "/pokemon-app/static/media/wallpaper.d95635ba.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.3d71db8b.js",
-    "static/js/2.84b75241.chunk.js",
-    "static/css/main.390e1f64.chunk.css",
-    "static/js/main.0deda9e7.chunk.js"
+    "static/js/2.cfa484d3.chunk.js",
+    "static/css/main.37b6e3d9.chunk.css",
+    "static/js/main.b8801128.chunk.js"
   ]
 }
