@@ -59,28 +59,13 @@
   cursor: pointer;
 }
 
-.mypokedex-card-box:nth-child(2n):after {
+.pokeball {
   width: 60px;
   height: 60px;
-  content: "";
   position: absolute;
-  top: 30%;
-  right: 10%;
-  background-image: url("./../../assets/images/pokeball.png");
+  top: 40%;
+  right: 15%;
   background-size: cover;
-  opacity: 10%;
-  transform: rotate(25deg);
-}
-
-.mypokedex-card-box:nth-child(2n + 1):after {
-  width: 60px;
-  height: 60px;
-  content: "";
-  position: absolute;
-  top: -20px;
-  right: 35%;
-  background-image: url("./../../assets/images/pokeball.png");
-  background-size: cover;
-  opacity: 10%;
+  opacity: 0.2;
   transform: rotate(25deg);
 }

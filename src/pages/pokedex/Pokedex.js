@@ -80,6 +80,13 @@ const Pokedex = () => {
         <div className="mypokedex-content">
           {pokemonList.map((item) => (
             <div className="mypokedex-card-box" key={item.name}>
+              <div
+                className="pokeball"
+                style={{
+                  backgroundImage: `url(${process.env.PUBLIC_URL + "/pokeball.png"})`,
+                }}
+              ></div>
+
               <Link to={`/pokemon-app/detail/${item.name}`}>
                 <div className="mypokedex-card">
                   <div className="mypokedex-img">

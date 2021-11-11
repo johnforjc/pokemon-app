@@ -216,6 +216,19 @@ const Details = () => {
       </div>
 
       <div className="detail-content-box">
+        <div
+          className="detail-pokeball"
+          style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL + "/pokeball.png"})`,
+          }}
+        ></div>
+
+        <div
+          className="detail-pokeball"
+          style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL + "/pokeball.png"})`,
+          }}
+        ></div>
         <div className="divider"></div>
         <div className="detail-info-box">
           <div className="detail-content">

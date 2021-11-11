@@ -4,28 +4,26 @@
   margin: auto;
 }
 
-.detail-content-box::after {
+.detail-pokeball:nth-child(2n) {
   width: 100px;
   height: 100px;
   content: "";
   position: absolute;
   top: 50px;
   right: 100px;
-  background-image: url("./../../assets/images/pokeball.png");
   background-size: cover;
-  opacity: 10%;
+  opacity: 0.2;
 }
 
-.detail-content-box::before {
+.detail-pokeball:nth-child(2n + 1) {
   width: 100px;
   height: 100px;
   content: "";
   position: absolute;
   bottom: 75px;
   left: 150px;
-  background-image: url("./../../assets/images/pokeball.png");
   background-size: cover;
-  opacity: 5%;
+  opacity: 0.2;
 }
 
 .detail-box h2 {
