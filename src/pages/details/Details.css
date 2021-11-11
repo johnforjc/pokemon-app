@@ -2,7 +2,34 @@
   display: block;
   width: 100%;
   margin: auto;
-  /* background: white; */
+}
+
+.detail-content-box::after {
+  width: 100px;
+  height: 100px;
+  content: "";
+  position: absolute;
+  top: 50px;
+  right: 100px;
+  background-image: url("./../../assets/images/pokeball.png");
+  background-size: cover;
+  opacity: 10%;
+}
+
+.detail-content-box::before {
+  width: 100px;
+  height: 100px;
+  content: "";
+  position: absolute;
+  bottom: 75px;
+  left: 150px;
+  background-image: url("./../../assets/images/pokeball.png");
+  background-size: cover;
+  opacity: 5%;
+}
+
+.detail-box h2 {
+  color: var(--secondary-color);
 }
 
 @media only screen and (min-width: 768px) {
@@ -15,11 +42,13 @@
   display: block;
   margin: auto;
   width: 100%;
-  background: white;
+  background: var(--secondary-color);
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
   padding: 20px 10px;
   min-height: calc(100vh - 192px - 20vh);
+  text-transform: capitalize;
+  position: relative;
 }
 
 .detail-info-box {
@@ -69,10 +98,11 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #fff;
+  background-color: var(--secondary-color);
   padding: 20px 20px;
   border-radius: 20px;
   z-index: 100;
+  box-shadow: #64646f33 0px 7px 29px 0px;
 }
 
 .alert .btn-resubmit {
@@ -81,11 +111,12 @@
   border-radius: 1em;
   border: none;
   outline: none;
-  background-color: red;
+  background-color: var(--warning-color);
   display: block;
   margin: auto;
   margin-top: 10px;
-  color: #fff;
+  color: var(--secondary-color);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 5px 0px, rgba(0, 0, 0, 0.2) 0px 0px 1px 0px;
 }
 
 .form-nickname-input h4 {
@@ -110,13 +141,14 @@ input#nickname {
   border-radius: 1em;
   border: none;
   outline: none;
-  background-color: white;
+  background-color: var(--secondary-color);
   display: block;
   width: fit-content;
   margin: auto;
-  color: #000;
+  color: var(--primary-color);
   margin-bottom: 10px;
   cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 5px 0px, rgba(0, 0, 0, 0.2) 0px 0px 1px 0px;
 }
 
 .detail-img {
@@ -140,10 +172,11 @@ input#nickname {
   border-radius: 1em;
   border: none;
   outline: none;
-  background-color: red;
+  background-color: var(--warning-color);
   display: block;
   margin: auto;
-  color: #fff;
+  color: var(--secondary-color);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 5px 0px, rgba(0, 0, 0, 0.2) 0px 0px 1px 0px;
 }
 
 #submit {
@@ -152,7 +185,32 @@ input#nickname {
   border-radius: 1em;
   border: none;
   outline: none;
-  background-color: orange;
+  background-color: var(--tersier-color);
   display: block;
   margin: auto;
+}
+
+.move-content-box {
+  width: 100%;
+}
+.move-content-box h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.move-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+
+.move-box {
+  display: inline-block;
+  width: 150px;
+  padding: 5px;
+  text-align: center;
+  border: solid 1px #b8b8b8;
+  text-transform: capitalize;
 }

@@ -9,6 +9,14 @@
   font-family: "Poppins", sans-serif;
 }
 
+:root {
+  --primary-color: #070707;
+  --secondary-color: #ececec;
+  --tersier-color: #ffc06d;
+  --warning-color: #ff5858;
+  --acceppt-color: #67ff67;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -19,10 +27,24 @@ a {
 }
 
 body {
-  background-color: orange;
   margin: 0;
+  background: url("./assets/images/wallpaper.jpg");
+  background-color: #535353;
+  background-blend-mode: multiply;
+  background-size: 100vw;
+  background-repeat: repeat-y;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+main {
+  padding-top: 40px;
+  min-height: calc(100vh - 60px);
 }

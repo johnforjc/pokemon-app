@@ -14,6 +14,8 @@ const Details = () => {
   const [baseStat, setBaseStat] = useState([]);
   const [imageUrl, setImageUrl] = useState("");
   const [dataTypePokemon, setdataTypePokemon] = useState([]);
+  const [dataMove, setDataMove] = useState([]);
+
   const [isCatched, setisCatched] = useState(false);
   const [isGone, setisGone] = useState(false);
   const [nickname, setnickname] = useState("");
@@ -115,7 +117,7 @@ const Details = () => {
           }
         }
 
-        console.log(moveArr);
+        setDataMove(moveArr);
 
         const data = [
           {
@@ -225,6 +227,17 @@ const Details = () => {
             <h2>Base Stat</h2>
             {baseStat.map((item, index) => (
               <ChartBar key={index} baseStat={item} />
+            ))}
+          </div>
+        </div>
+
+        <div className="move-content-box">
+          <h2>Move Set</h2>
+          <div className="move-content">
+            {dataMove.map((item, index) => (
+              <div className="move-box" key={index}>
+                <small>{item}</small>
+              </div>
             ))}
           </div>
         </div>

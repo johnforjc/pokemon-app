@@ -18,11 +18,14 @@
 
 .mypokedex-card-box {
   display: inline-block;
-  background: white;
+  position: relative;
+  background: var(--secondary-color);
   width: max(20%, 320px);
   padding: 0.5em 0.5em;
   border-radius: 60px;
   margin: 0 5px 20px 5px;
+  box-shadow: #56565c2c 0px 7px 29px 0px;
+  border: solid 0.1px rgba(0, 0, 0, 0.418);
 }
 
 .mypokedex-card {
@@ -35,7 +38,7 @@
   width: 60px;
   height: 60px;
   overflow: hidden;
-  background: orange;
+  background: #ffe7bb;
   margin-right: 10px;
 }
 
@@ -50,8 +53,34 @@
 
 .mypokedex-card .btn-release {
   padding: 0.25em 0.5em;
-  background: orange;
+  background: #ffe7bb;
   border-radius: 20px;
   height: fit-content;
   cursor: pointer;
+}
+
+.mypokedex-card-box:nth-child(2n):after {
+  width: 60px;
+  height: 60px;
+  content: "";
+  position: absolute;
+  top: 30%;
+  right: 10%;
+  background-image: url("./../../assets/images/pokeball.png");
+  background-size: cover;
+  opacity: 10%;
+  transform: rotate(25deg);
+}
+
+.mypokedex-card-box:nth-child(2n + 1):after {
+  width: 60px;
+  height: 60px;
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: 35%;
+  background-image: url("./../../assets/images/pokeball.png");
+  background-size: cover;
+  opacity: 10%;
+  transform: rotate(25deg);
 }

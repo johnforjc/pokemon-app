@@ -3,7 +3,7 @@
   border-radius: 1em;
   width: fit-content;
   font-weight: 500;
-  color: #fff;
+  color: var(--secondary-color);
   font-size: 10px;
   letter-spacing: 0.1em;
 }
