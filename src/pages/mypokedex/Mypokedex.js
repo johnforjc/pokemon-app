@@ -33,7 +33,7 @@ const Mypokedex = () => {
             <div className="mypokedex-card-box" key={item.nickname}>
               <div className="mypokedex-card">
                 <div className="mypokedex-img">
-                  <img src={item.urlImage} />
+                  <img src={item.urlImage} alt={item.nickname} />
                 </div>
 
                 <div className="mypokedex-info">

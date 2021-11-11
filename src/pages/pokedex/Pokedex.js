@@ -92,7 +92,7 @@ const Pokedex = () => {
               <Link to={`/pokemon-app/detail/${item.name}`}>
                 <div className="mypokedex-card">
                   <div className="mypokedex-img">
-                    <img src={urlImage(item.url)} />
+                    <img src={urlImage(item.url)} alt={item.name} />
                   </div>
 
                   <div className="pokedex-info">
