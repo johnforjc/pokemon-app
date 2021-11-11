@@ -33,7 +33,7 @@ const Header = () => {
         <Link to="/pokemon-app/">
           <div className="nav-list">Pokedex</div>
         </Link>
-        <Link to="/pokemon-app/">
+        <Link to="/pokemon-app/mypokemon">
           <div className="nav-list">My Pokemon</div>
         </Link>
       </nav>

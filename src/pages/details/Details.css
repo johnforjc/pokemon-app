@@ -9,8 +9,8 @@
   height: 100px;
   content: "";
   position: absolute;
-  top: 50px;
-  right: 100px;
+  top: 5%;
+  right: 10%;
   background-size: cover;
 }
 
@@ -19,8 +19,8 @@
   height: 100px;
   content: "";
   position: absolute;
-  bottom: 75px;
-  left: 150px;
+  bottom: 5%;
+  left: 10%;
   background-size: cover;
 }
 

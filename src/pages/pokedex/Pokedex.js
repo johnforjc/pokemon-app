@@ -37,6 +37,7 @@ const Pokedex = () => {
   }
 
   function changeURL(event) {
+    window.scroll(0, 0);
     if (event.target.dataset.url) {
       setUrlList(event.target.dataset.url);
     } else {
